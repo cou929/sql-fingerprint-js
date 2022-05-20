@@ -1,0 +1,25 @@
+{
+  "name": "sql-fingerprint",
+  "version": "1.0.0",
+  "description": "Convert queries into fingerprints.",
+  "main": "fingerprint.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cou929/sql-fingerprint-js.git"
+  },
+  "author": "Kosei Moriyama",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cou929/sql-fingerprint-js/issues"
+  },
+  "homepage": "https://github.com/cou929/sql-fingerprint-js#readme",
+  "type": "module",
+  "devDependencies": {
+    "eslint": "^8.16.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}
