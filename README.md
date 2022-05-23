@@ -75,3 +75,29 @@ order by
 ```
 
 See also: [Standard SQL user\-defined functions  \|  BigQuery  \|  Google Cloud](https://cloud.google.com/bigquery/docs/reference/standard-sql/user-defined-functions#javascript-udf-structure)
+
+## Options
+
+- `matchMD5Checksum`
+    - Replace md5 string to single `?`
+
+```sql
+-- original
+SELECT * FROM db.fbc5e685a5d3d45aa1d0347fdb7c4d35_temp where id=1
+-- fingerprint with matchMD5Checksum=true
+select * from db.?_temp where id=?
+-- fingerprint with matchMD5Checksum=false (default)
+select * from db.fbc?_temp where id=?
+```
+
+- `matchEmbeddedNumbers`
+    - Preserve numbers within words. Useful for the case like that table name contains number
+
+```sql
+-- original
+SELECT * FROM prices.rt_5min WHERE id = 1
+-- fingerprint with matchMD5Checksum=true
+select * from prices.rt_?min where id = ?
+-- fingerprint with matchMD5Checksum=false (default)
+select * from prices.rt_5min where id = ?
+```
