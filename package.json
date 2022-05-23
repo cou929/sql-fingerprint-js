@@ -27,5 +27,9 @@
   },
   "dependencies": {
     "yargs": "^17.5.1"
-  }
+  },
+  "keywords": [
+    "mysql",
+    "sql"
+  ]
 }
