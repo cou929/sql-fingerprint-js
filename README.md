@@ -91,13 +91,13 @@ select * from db.fbc?_temp where id=?
 ```
 
 - `matchEmbeddedNumbers`
-    - Preserve numbers within words. Useful for the case like that table name contains number
+    - Preserve numbers within words. Useful for the case like that table name contains a number
 
 ```sql
 -- original
 SELECT * FROM prices.rt_5min WHERE id = 1
--- fingerprint with matchMD5Checksum=true
-select * from prices.rt_?min where id = ?
--- fingerprint with matchMD5Checksum=false (default)
+-- fingerprint with matchEmbeddedNumbers=true
 select * from prices.rt_5min where id = ?
+-- fingerprint with matchEmbeddedNumbers=false (default)
+select * from prices.rt_?min where id = ?
 ```
